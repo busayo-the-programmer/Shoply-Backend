@@ -40,8 +40,10 @@ const start = async() => {
     const conn = await mongoose.connect(process.env.MONGO_URL);
     console.log("Connected to MongoDB");
 
-    app.listen(process.env.PORT, () => {
-  console.log(`Server is running at http://localhost:${process.env.PORT}`);
+const PORT = process.env.PORT || 3002;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
