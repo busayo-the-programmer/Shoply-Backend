@@ -3,7 +3,8 @@ const Products = require('../model/product');
 async function createProduct(req, res) {
     try {
         const { name, description, price, category, image, stock } = req.body;
-        console.log(req.body);
+       console.log(req.body)  // you already have this
+console.log(req.user)  // add this — if it logs undefined, that's your bug
         const vendor = req.user.id
         const newProduct = await Products.create({
             name,

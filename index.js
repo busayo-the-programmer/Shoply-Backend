@@ -31,9 +31,6 @@ app.use((req, res) => {
 })
 
 
-
-const port = 3002;
-
 //commit
 
 
@@ -43,8 +40,8 @@ const start = async() => {
     const conn = await mongoose.connect(process.env.MONGO_URL);
     console.log("Connected to MongoDB");
 
-    app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+    app.listen(process.env.PORT, () => {
+  console.log(`Server is running at http://localhost:${process.env.PORT}`);
 });
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
