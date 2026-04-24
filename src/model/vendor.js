@@ -122,7 +122,7 @@ const vendorSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User',
-      required: [true, 'User account is required'],
+      // required: [true, 'User account is required'],
     },
   },
   {
